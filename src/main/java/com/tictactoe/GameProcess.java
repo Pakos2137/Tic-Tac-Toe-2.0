@@ -1,4 +1,4 @@
-package com.kodilla;
+package com.tictactoe;
 
 public class GameProcess {
     Board board;
@@ -10,5 +10,9 @@ public class GameProcess {
         this.board = board;
     }
     public void startGame() {
+        MoveProcess moveProcess = new MoveProcess(board);
+        while (true) {
+            moveProcess.fieldNumberInput();
+        }
     }
 }

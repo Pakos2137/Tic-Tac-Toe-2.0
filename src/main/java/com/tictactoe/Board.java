@@ -1,4 +1,4 @@
-package com.kodilla;
+package com.tictactoe;
 
 public class Board {
     private int number = 0;

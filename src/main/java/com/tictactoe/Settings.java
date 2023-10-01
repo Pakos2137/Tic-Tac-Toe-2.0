@@ -1,4 +1,4 @@
-package com.kodilla;
+package com.tictactoe;
 
 import java.util.Scanner;
 
