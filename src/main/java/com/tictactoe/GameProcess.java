@@ -2,17 +2,21 @@ package com.tictactoe;
 
 public class GameProcess {
     Board board;
-    Settings settings;
-    int boardSize;
-    char boardValue;
+    char playerType;
 
-    public GameProcess(Board board) {
+    public GameProcess(Board board,char playerType) {
         this.board = board;
+        this.playerType = playerType;
     }
     public void startGame() {
         MoveProcess moveProcess = new MoveProcess(board);
+        WinCheck winCheck = new WinCheck(board.board.length);
+        board.showBoard();
         while (true) {
-            moveProcess.fieldNumberInput();
+            moveProcess.playerFieldNumberInput();
+            if(playerType == 'K') {
+                moveProcess.cpuMove();
+            }
         }
     }
 }

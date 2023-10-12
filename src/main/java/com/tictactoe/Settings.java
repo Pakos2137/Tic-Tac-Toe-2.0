@@ -8,7 +8,7 @@ public class Settings {
     int boardValue;
 
     public void settingProcess(Board board) {
-        System.out.println("Witaj W Grze Kamień,Papier,Nożyce" + '\n');
+        System.out.println("Witaj W Kamien,Papier,Nożyce" + '\n');
         playerSettings();
         boardSizeSet(board);
     }
@@ -49,12 +49,12 @@ public class Settings {
         if(boardValue == 10 || boardValue == 3) {
             if(getBoardValue() == 3) {
                 board.setBoard3x3();
-                GameProcess gameProcess = new GameProcess(board);
+                GameProcess gameProcess = new GameProcess(board,playerType);
                 gameProcess.startGame();
             }
             if(getBoardValue() == 10) {
                 board.setBoard10x10();
-                GameProcess gameProcess = new GameProcess(board);
+                GameProcess gameProcess = new GameProcess(board,playerType);
                 gameProcess.startGame();
             }
         } else {

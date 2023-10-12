@@ -5,6 +5,5 @@ public class Main {
         Settings settings = new Settings();
         Board board = new Board();
         settings.settingProcess(board);
-        GameProcess gameProcess = new GameProcess(board);
     }
 }
