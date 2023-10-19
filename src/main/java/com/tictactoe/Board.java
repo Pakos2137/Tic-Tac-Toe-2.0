@@ -3,6 +3,7 @@ package com.tictactoe;
 public class Board {
     private int number = 0;
     String[][] board;
+
     public void setBoard3x3() {
         for (int i = 0; i < 4; i++) {
             board = new String[i][0];
@@ -10,8 +11,8 @@ public class Board {
                 board = new String[i][k];
             }
         }
-        for(int i=0; i<3; i++) {
-            number ++;
+        for (int i = 0; i < 3; i++) {
+            number++;
             board[i][0] = String.valueOf(number);
             for (int k = 0; k < 3; k++) {
                 board[i][k] = String.valueOf(number);
@@ -20,6 +21,7 @@ public class Board {
             number--;
         }
     }
+
     public void setBoard10x10() {
         for (int i = 0; i < 11; i++) {
             board = new String[i][0];
@@ -28,8 +30,8 @@ public class Board {
             }
         }
         number = -1;
-        for(int i=0; i<10; i++) {
-            number ++;
+        for (int i = 0; i < 10; i++) {
+            number++;
             board[i][0] = String.valueOf(number);
             for (int k = 0; k < 10; k++) {
                 board[i][k] = String.valueOf(number);
@@ -38,6 +40,7 @@ public class Board {
             number--;
         }
     }
+
     public void showBoard() {
         switch (board.length) {
             case 3: {
@@ -66,11 +69,8 @@ public class Board {
             }
         }
     }
+
     public String[][] getBoard() {
         return board;
-    }
-
-    public void setBoard(String[][] board) {
-        this.board = board;
     }
 }

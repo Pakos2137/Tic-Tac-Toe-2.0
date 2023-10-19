@@ -18,5 +18,6 @@ public class Tests {
         board.setBoard10x10();
 
         assertEquals(board.getBoard().length,10);
+        board.showBoard();
     }
 }
