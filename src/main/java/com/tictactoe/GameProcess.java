@@ -1,7 +1,7 @@
 package com.tictactoe;
 
 public class GameProcess {
-    boolean gameInProgress;
+    boolean gameInProgress = true;
     Board board;
     char playerType;
 
@@ -10,20 +10,30 @@ public class GameProcess {
         this.playerType = playerType;
     }
     public void startGame() {
-        gameInProgress = true;
         MoveProcess moveProcess = new MoveProcess(board);
-        WinCheck winCheck = new WinCheck(board);
         board.showBoard();
         while (gameInProgress) {
             moveProcess.playerFieldNumberInput();
-            if(board.board.length == 3) {
-                gameInProgress = winCheck.winCheck3x3();
-            } else if (board.board.length == 10) {
-                gameInProgress = winCheck.winCheck10x10();
-            }
+            winCheck(gameInProgress);
             if(playerType == 'K' && gameInProgress) {
                 moveProcess.cpuMove();
+                winCheck(gameInProgress);
             }
+            System.out.println(gameInProgress);
         }
+    }
+    private boolean winCheck(boolean gameInProgress) {
+        WinCheck winCheck = new WinCheck(board);
+        if(board.board.length == 3) {
+            gameInProgress = winCheck.winCheck3x3();
+        } else if (board.board.length == 10) {
+            gameInProgress = winCheck.winCheck10x10();
+        }
+        return setGameInProgress(gameInProgress);
+    }
+
+    public boolean setGameInProgress(boolean gameInProgress) {
+        this.gameInProgress = gameInProgress;
+        return gameInProgress;
     }
 }
